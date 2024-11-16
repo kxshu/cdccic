@@ -137,7 +137,7 @@ if (isset($_POST['date'])) {
             <!-- 修改日期筛选区域 -->
             <div class="date-filter">
                 <form method="POST" id="dateForm">
-                    <input type="date" id="datePicker" name="date" value="<?php echo $today; ?>">
+                    <input type="date" id="datePicker" name="date" value="<?php echo isset($_POST['date']) ? $_POST['date'] : $today; ?>">
                     <button type="submit">查询</button>
                 </form>
             </div>
@@ -148,7 +148,7 @@ if (isset($_POST['date'])) {
             <ul class="content-list" id="contentList1">
                 <?php foreach ($result as $item): ?>
                 <li class="list-item">
-                    <a href="https://www.cdggzy.com/sitenew/notice/ZCZY/zsNoticeContent.aspx?id=<?php echo $item['pkid'];?>"><?php echo $item['infotitle'];?></a>
+                    <a href="https://www.cdggzy.com/sitenew/notice/ZCZY/NoticeContent.aspx?id=<?php echo $item['pkid'];?>" target="_blank"><?php echo $item['infotitle'];?></a>
                     <span class="list-date"><?php echo $item['pubtime'];?></span>
                 </li>
                 <?php endforeach; ?>
@@ -158,7 +158,7 @@ if (isset($_POST['date'])) {
             <ul class="content-list" id="contentList2">
                 <?php foreach ($result2 as $item): ?>
                 <li class="list-item">
-                    <a href="https://www.cdggzy.com/sitenew/notice/ZCZY/zsNoticeContent.aspx?id=<?php echo $item['pkid'];?>"><?php echo $item['infotitle'];?></a>
+                    <a href="https://www.cdggzy.com/sitenew/notice/ZCZY/zsNoticeContent.aspx?id=<?php echo $item['pkid'];?>" target="_blank"><?php echo $item['infotitle'];?></a>
                     <span class="list-date"><?php echo $item['pubtime'];?></span>
                 </li>
                 <?php endforeach; ?>
